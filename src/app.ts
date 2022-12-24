@@ -1,7 +1,6 @@
 import * as express from "express"
 import { Request, Response } from "express"
 import { User } from "./entity/User"
-import {Model} from "./entity/Model";
 import { myDataSource } from "./data-source"
 
 // establish database connection
@@ -21,7 +20,6 @@ app.use(express.json())
 // register routes
 app.get("/users", async function (req: Request, res: Response) {
     const users = await myDataSource.getRepository(User).find();
-    const models = await myDataSource.getRepository(Model).find();
     res.json(users)
 })
 

@@ -1,13 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
+import {Entity, Column} from "typeorm"
+import {Common} from "./Common";
 
 @Entity()
-export class User {
-    @PrimaryGeneratedColumn()
-    id: number
+export class User extends Common{
+    @Column()
+    id:string;
 
     @Column()
-    firstName: string
+    password:string;
 
     @Column()
-    lastName: string
+    name:string;
+
 }
