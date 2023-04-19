@@ -130,7 +130,7 @@ export class ModelService extends HTTPService {
                 return tagName;
             } else {
                 const lastIndex: number = await this.getLastIndex(repositoryName, tagName);
-                return tagName + '-' + (Number(lastIndex) + 1).toString();
+                return repositoryName + '-' + tagName + '-' + (Number(lastIndex) + 1).toString();
             }
         } catch (e) {
             console.error(e);
